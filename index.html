@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Circle And Rectangle</title>
+    <style>
+        .container{
+            margin: 0 auto;
+            text-align: center;
+            border: 0.5px solid black;
+            width:300px;
+        }
+        .input1{
+          margin:20px;
+        }
+        .btn-rect{
+          margin: 20px;
+          padding: 10px;
+          border-radius: 20px;
+          border: none;
+        }
+        .reset{
+          margin-bottom: 5px;
+          padding: 10px;
+          border-radius: 20px;
+          border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h3>Area Of Rectangle</h3>
+        <input type="number" id="length" class="input1"><br>
+        <input type="number" id="breadth" class="input2"><br>
+        <p id="result"></p>
+      <button onclick="area()" class="btn-rect">
+        calculate
+    </button> <br>
+    <button onclick="reset()" class="reset">reset</button>
+    </div>
+
+    <div class="container2">
+      <input type="number" id="radius" class="input3"><br>
+     
+      <p id="output"></p>
+    <button onclick="AreaOfCircle()" class="btn-circle">
+      calculate
+  </button> <br>
+  <br>
+    <button onclick="reset1()" class="reset2">reset</button>
+  </div>
+    <script>
+        function area(){
+            const lengthElement = document.getElementById("length");
+            const breadthElement = document.getElementById("breadth");
+            const resultElement = document.getElementById("result");
+          const total= parseInt( lengthElement.value) * parseInt( breadthElement.value);
+        
+          resultElement.innerText = `Area Of Rectangle: ${total}`;
+          const num1 = lengthElement.value;
+          const num2 = breadthElementElement.value;
+          if(num1 == ""){
+            alert("please enter first no.");
+            return;
+          }
+          if(num2==""){
+            alert("please enter second no.");
+            return;
+          }
+        }
+        function reset(){
+            const num1 = document.getElementById("length");
+            const num2 = document.getElementById("breadth");
+            const resultElement = document.getElementById("result");
+        num1.value="";
+        num2.value="";
+        resultElement.innerText = "-";
+    
+        }
+        function AreaOfCircle(){
+          const radiusElement = document.getElementById("radius");
+          const outputElement = document.getElementById("output");
+          const area=3.14*parseInt(radiusElement.value)*parseInt(radiusElement.value);
+          outputElement.innerText=`Area of Circle ${area}`;
+          const rad = radiusElement.value;
+         
+          if(rad == ""){
+            alert("please enter radius");
+            return;
+          }
+          function reset1(){
+            const rad = document.getElementById("radius");
+          
+            const outputElement = document.getElementById("output");
+             rad.value="";
+        outputElement.innerText = "-";
+           
+          
+        }
+        }
+    </script>
+</body>
+</html>
